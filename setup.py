@@ -8,7 +8,7 @@ from distutils.core import setup, Command
 from distutils.dir_util import remove_tree
 
 MODULE_NAME = "binwalk"
-MODULE_VERSION = "2.1.2"
+MODULE_VERSION = "2.2.0"
 SCRIPT_NAME = MODULE_NAME
 MODULE_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 VERSION_FILE = os.path.join(MODULE_DIRECTORY, "src", "binwalk", "core", "version.py")
@@ -329,7 +329,7 @@ for data_dir in ["magic", "config", "plugins", "modules", "core"]:
 # If doing a build or installation, then create a version.py file
 # which defines the current binwalk version. This file is excluded
 # from git in the .gitignore file.
-if 'install' in ' '.join(sys.argv) or 'build' in ' '.join(sys.argv):
+if 'install' in ' '.join(sys.argv) or 'build' in ' '.join(sys.argv) or 'sdist' in ' '.join(sys.argv):
     sys.stdout.write("creating %s\n" % (VERSION_FILE))
 
     try:
